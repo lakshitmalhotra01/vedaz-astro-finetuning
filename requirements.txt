@@ -1,0 +1,41 @@
+# =====================================================================
+# Requirements for Qwen2.5-7B-Instruct QLoRA Fine-tuning
+# =====================================================================
+# Install with: pip install -r requirements.txt
+# Tested with Python 3.10+, CUDA 12.1+
+
+# Core deep learning
+torch>=2.2.0                   # PyTorch (CUDA-enabled version recommended)
+torchvision>=0.17.0
+
+# Hugging Face ecosystem
+transformers>=4.46.0           # Core transformers (Qwen2.5 requires >=4.43)
+datasets>=2.20.0               # Dataset loading & processing
+accelerate>=0.34.0             # Multi-GPU / mixed precision training
+tokenizers>=0.20.0             # Fast tokenizers
+
+# PEFT & TRL for LoRA/QLoRA
+peft>=0.13.0                   # Parameter-efficient fine-tuning (LoRA)
+trl>=0.11.0                    # SFTTrainer, reward modelling
+
+# Quantization (QLoRA 4-bit)
+bitsandbytes>=0.44.0           # 4-bit/8-bit quantization
+
+# Evaluation & generation
+evaluate>=0.4.0
+rouge-score>=0.1.2
+
+# Data handling
+pandas>=2.0.0
+pyarrow>=15.0.0
+
+# Experiment tracking (optional but recommended)
+wandb>=0.17.0
+
+# Utilities
+tqdm>=4.66.0
+scipy>=1.11.0
+sentencepiece>=0.2.0           # Some tokenizers need this
+
+# For merging adapters and saving
+safetensors>=0.4.0
